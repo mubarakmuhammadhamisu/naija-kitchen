@@ -11,17 +11,19 @@ import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <main className="relative overflow-x-hidden">
+    <>
       <Navbar />
-      <Hero />
-      <Features />
-      <OurStory />
-      <Bestsellers />
-      <Gallery />
-      <Testimonials />
-      <Events />
-      <Reservation />
+      <main id="main-content" tabIndex={-1} className="relative overflow-x-hidden">
+        <Hero />
+        <Features />
+        <OurStory />
+        <Bestsellers />
+        <Gallery />
+        <Testimonials />
+        <Events />
+        <Reservation />
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }

@@ -240,3 +240,42 @@ body {
 .open-pulse {
   animation: openPulse 2s infinite;
 }
+
+/* ── Skip link ── */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+.focus\:not-sr-only:focus {
+  position: fixed;
+  width: auto;
+  height: auto;
+  padding: revert;
+  margin: revert;
+  overflow: revert;
+  clip: revert;
+  white-space: revert;
+}
+
+/* ── Accessible focus ring (keyboard-only) ── */
+:focus-visible {
+  outline: 2px solid #C8221A;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ── Respect reduced-motion ── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
