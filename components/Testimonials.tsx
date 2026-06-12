@@ -136,6 +136,7 @@ export default function Testimonials() {
             {REVIEWS.map((r, i) => (
               <button
                 key={r.name}
+                type="button"
                 role="tab"
                 aria-selected={i === active}
                 aria-label={`View review by ${r.name}`}
@@ -146,10 +147,10 @@ export default function Testimonials() {
           </div>
 
           <div className="flex gap-3" role="group" aria-label="Testimonial navigation">
-            <button onClick={prev} className="w-10 h-10 rounded-full border border-naija-border flex items-center justify-center text-white/60 hover:text-white hover:border-naija-red/50 transition-all duration-200" aria-label="Previous testimonial">
+            <button type="button" onClick={prev} className="w-10 h-10 rounded-full border border-naija-border flex items-center justify-center text-white/60 hover:text-white hover:border-naija-red/50 transition-all duration-200" aria-label="Previous testimonial">
               <ChevronLeft size={16} aria-hidden="true" />
             </button>
-            <button onClick={next} className="w-10 h-10 rounded-full bg-naija-red flex items-center justify-center text-white hover:bg-naija-red-hover transition-colors duration-200" aria-label="Next testimonial">
+            <button type="button" onClick={next} className="w-10 h-10 rounded-full bg-naija-red flex items-center justify-center text-white hover:bg-naija-red-hover transition-colors duration-200" aria-label="Next testimonial">
               <ChevronRight size={16} aria-hidden="true" />
             </button>
           </div>
@@ -163,6 +164,7 @@ export default function Testimonials() {
           {REVIEWS.map((r, i) => (
             <li key={r.name}>
               <button
+                type="button"
                 onClick={() => setActive(i)}
                 aria-pressed={i === active}
                 aria-label={`View review by ${r.name}`}

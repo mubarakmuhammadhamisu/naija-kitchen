@@ -95,6 +95,7 @@ export default function Bestsellers() {
             aria-label="Scroll dish carousel"
           >
             <button
+              type="button"
               onClick={() => scroll("left")}
               disabled={!canScrollLeft}
               className="w-11 h-11 rounded-full border border-naija-border flex items-center justify-center text-white/60 hover:text-white hover:border-naija-red/50 transition-all duration-200 disabled:opacity-30 disabled:cursor-not-allowed"
@@ -103,6 +104,7 @@ export default function Bestsellers() {
               <ChevronLeft size={18} aria-hidden="true" />
             </button>
             <button
+              type="button"
               onClick={() => scroll("right")}
               disabled={!canScrollRight}
               className="w-11 h-11 rounded-full border border-naija-border flex items-center justify-center text-white/60 hover:text-white hover:border-naija-red/50 transition-all duration-200 disabled:opacity-30 disabled:cursor-not-allowed"
@@ -177,6 +179,7 @@ function DishCard({ dish, index }: { dish: Dish; index: number }) {
 
         <div className="dish-overlay absolute inset-0 bg-black/30 opacity-0 transition-opacity duration-300 flex items-center justify-center">
           <button
+            type="button"
             onClick={handleAdd}
             className="bg-white text-naija-dark font-syne font-700 text-xs px-4 py-2 rounded-full flex items-center gap-2 hover:bg-naija-amber transition-colors duration-200"
             aria-label={added ? `${dish.name} added to cart` : `Quick add ${dish.name} to cart`}

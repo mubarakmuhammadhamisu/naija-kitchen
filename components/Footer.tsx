@@ -2,9 +2,27 @@ import Link from "next/link";
 import { Flame, ArrowRight, Heart } from "lucide-react";
 
 const FOOTER_LINKS = {
-  Explore:  ["Home", "About Us", "Menu", "Gallery", "Events", "Blog"],
-  Services: ["Dine In", "Takeaway", "Catering", "Private Dining", "Corporate Events"],
-  Legal:    ["Privacy Policy", "Terms of Use", "Cookie Policy", "Refund Policy"],
+  Explore: [
+    { label: "Home",       href: "#home" },
+    { label: "About Us",   href: "#about" },
+    { label: "Menu",       href: "#menu" },
+    { label: "Gallery",    href: "#gallery" },
+    { label: "Events",     href: "#events" },
+    { label: "Blog",       href: "#", soon: true },
+  ],
+  Services: [
+    { label: "Dine In",          href: "#reservation" },
+    { label: "Takeaway",         href: "#contact" },
+    { label: "Catering",         href: "#contact" },
+    { label: "Private Dining",   href: "#reservation" },
+    { label: "Corporate Events", href: "#events" },
+  ],
+  Legal: [
+    { label: "Privacy Policy", href: "#", soon: true },
+    { label: "Terms of Use",   href: "#", soon: true },
+    { label: "Cookie Policy",  href: "#", soon: true },
+    { label: "Refund Policy",  href: "#", soon: true },
+  ],
 };
 
 export default function Footer() {
@@ -22,7 +40,7 @@ export default function Footer() {
           <div className="lg:col-span-2 flex flex-col gap-5">
             <Link
               href="#home"
-              className="flex items-center gap-2 group self-start"
+              className="flex items-center gap-2 self-start"
               aria-label="Naija Kitchen — back to top"
             >
               <div className="w-9 h-9 bg-naija-red rounded-lg flex items-center justify-center">
@@ -35,8 +53,8 @@ export default function Footer() {
             </Link>
 
             <p className="text-white/45 font-outfit text-sm leading-relaxed max-w-xs">
-              Authentic Nigerian cuisine crafted with love, tradition and the finest ingredients.
-              From smoky suya to rich jollof — every dish tells a story.
+              Authentic Nigerian cuisine crafted with love, tradition and the finest
+              ingredients. From smoky suya to rich jollof — every dish tells a story.
             </p>
 
             {/* Newsletter */}
@@ -45,7 +63,9 @@ export default function Footer() {
                 Get Weekly Specials
               </p>
               <div className="flex gap-2" role="group" aria-labelledby="newsletter-label">
-                <label htmlFor="newsletter-email" className="sr-only">Email address for weekly specials</label>
+                <label htmlFor="newsletter-email" className="sr-only">
+                  Email address for weekly specials
+                </label>
                 <input
                   id="newsletter-email"
                   type="email"
@@ -70,13 +90,23 @@ export default function Footer() {
               <h2 className="font-syne font-700 text-white text-sm mb-4">{title}</h2>
               <ul className="flex flex-col gap-2.5 list-none">
                 {links.map((link) => (
-                  <li key={link}>
-                    <Link
-                      href="#"
-                      className="text-white/45 hover:text-naija-amber text-sm font-outfit transition-colors duration-200"
-                    >
-                      {link}
-                    </Link>
+                  <li key={link.label}>
+                    {link.soon ? (
+                      <span
+                        className="text-white/25 text-sm font-outfit cursor-default"
+                        aria-label={`${link.label} — coming soon`}
+                        title="Coming soon"
+                      >
+                        {link.label}
+                      </span>
+                    ) : (
+                      <Link
+                        href={link.href}
+                        className="text-white/45 hover:text-naija-amber text-sm font-outfit transition-colors duration-200"
+                      >
+                        {link.label}
+                      </Link>
+                    )}
                   </li>
                 ))}
               </ul>

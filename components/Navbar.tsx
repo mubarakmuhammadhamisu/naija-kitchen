@@ -82,6 +82,7 @@ export default function Navbar() {
           {/* Actions */}
           <div className="flex items-center gap-3">
             <button
+              type="button"
               aria-label={`Open cart — ${cartCount} item${cartCount !== 1 ? "s" : ""}`}
               className="relative w-10 h-10 flex items-center justify-center rounded-full border border-naija-border hover:border-naija-red/50 transition-colors duration-200"
             >
@@ -105,6 +106,7 @@ export default function Navbar() {
             </Link>
 
             <button
+              type="button"
               onClick={() => setMobileOpen((o) => !o)}
               className="lg:hidden w-10 h-10 flex items-center justify-center rounded-full border border-naija-border text-white/80"
               aria-label={mobileOpen ? "Close navigation menu" : "Open navigation menu"}

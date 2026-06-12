@@ -57,9 +57,9 @@ export default function Reservation() {
       id="reservation"
       aria-labelledby="reservation-heading"
       className="relative overflow-hidden bg-naija-dark py-20 lg:py-28"
-      style={{ backgroundImage: "url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1600&q=40')", backgroundSize: "cover", backgroundPosition: "center" }}
+      style={{ backgroundImage: "radial-gradient(ellipse 80% 60% at 70% 50%, rgba(200,34,26,0.06) 0%, transparent 60%), radial-gradient(ellipse 60% 80% at 10% 80%, rgba(232,146,10,0.04) 0%, transparent 60%)" }}
     >
-      <div className="absolute inset-0 bg-naija-dark/90" aria-hidden="true" />
+
 
       <div ref={ref} className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-14 lg:gap-20 items-start">
