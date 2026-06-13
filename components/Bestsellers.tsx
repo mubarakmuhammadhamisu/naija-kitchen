@@ -17,7 +17,7 @@ const DISHES: Dish[] = [
 ];
 
 export default function Bestsellers() {
-  const scrollRef  = useRef<HTMLDivElement>(null);
+  const scrollRef  = useRef<HTMLListElement>(null);
   const sectionRef = useRef<HTMLDivElement>(null);
   const [canScrollLeft,  setCanScrollLeft]  = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
