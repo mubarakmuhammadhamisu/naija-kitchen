@@ -1,6 +1,12 @@
 import Link from "next/link";
 import { Flame, ArrowRight, Heart } from "lucide-react";
 
+type FooterLink = {
+  label: string
+  href: string
+  soon?: boolean   // the ? makes it optional
+}
+
 const FOOTER_LINKS = {
   Explore: [
     { label: "Home",       href: "#home" },
