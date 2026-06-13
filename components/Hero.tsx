@@ -15,7 +15,7 @@ const AVATAR_URLS = [
 const AVATAR_NAMES = ["Adaeze", "Emeka", "Tunde", "Chioma"];
 
 export default function Hero() {
-  const heroRef = useRef<HTMLDivElement>(null);
+  const heroRef = useRef<HTMLSectionElement>(null);
 
   useEffect(() => {
     const el = heroRef.current;
