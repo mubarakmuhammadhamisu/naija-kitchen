@@ -7,7 +7,7 @@ type FooterLink = {
   soon?: boolean   // the ? makes it optional
 }
 
-const FOOTER_LINKS = {
+const FOOTER_LINKS Record<string, FooterLink[]> = {
   Explore: [
     { label: "Home",       href: "#home" },
     { label: "About Us",   href: "#about" },
