@@ -11,7 +11,7 @@ const FEATURES = [
 ];
 
 export default function Features() {
-  const ref = useRef<HTMLDivElement>(null);
+  const ref = useRef<HTMLUElement>(null);
 
   useEffect(() => {
     const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
